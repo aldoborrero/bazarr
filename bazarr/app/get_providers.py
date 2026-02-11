@@ -113,6 +113,9 @@ def provider_throttle_map():
         "whisperai": {
             ConnectionError: (datetime.timedelta(hours=24), "24 hours"),
         },
+        "submate": {
+            ConnectionError: (datetime.timedelta(hours=24), "24 hours"),
+        },
         "regielive": {
             APIThrottled: (datetime.timedelta(hours=1), "1 hour"),
             TooManyRequests: (datetime.timedelta(minutes=5), "5 minutes"),
@@ -329,6 +332,14 @@ def get_providers_auth():
             'ffmpeg_path': _FFMPEG_BINARY,
             'loglevel': settings.whisperai.loglevel,
             'pass_video_name': settings.whisperai.pass_video_name,
+        },
+        'submate': {
+            'endpoint': settings.submate.endpoint,
+            'response': settings.submate.response,
+            'timeout': settings.submate.timeout,
+            'ffmpeg_path': _FFMPEG_BINARY,
+            'loglevel': settings.submate.loglevel,
+            'pass_video_name': settings.submate.pass_video_name,
         },
         "animetosho": {
             'search_threshold': settings.animetosho.search_threshold,

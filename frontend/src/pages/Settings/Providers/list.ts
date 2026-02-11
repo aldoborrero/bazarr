@@ -616,6 +616,48 @@ export const ProviderList: Readonly<ProviderInfo[]> = [
       },
     ],
   },
+  {
+    key: "submate",
+    name: "Submate",
+    description: "AI Generated Subtitles with Multi-language Translation (LLM)",
+    inputs: [
+      {
+        type: "text",
+        key: "endpoint",
+        defaultValue: "http://127.0.0.1:9000",
+        name: "Submate Server Endpoint",
+      },
+      {
+        type: "text",
+        key: "response",
+        defaultValue: 5,
+        name: "Connection/response timeout in seconds",
+      },
+      {
+        type: "text",
+        key: "timeout",
+        defaultValue: 3600,
+        name: "Transcription/translation timeout in seconds",
+      },
+      {
+        type: "select",
+        key: "loglevel",
+        name: "Logging level",
+        options: logLevelOptions,
+      },
+      {
+        type: "switch",
+        key: "pass_video_name",
+        name: "Pass video filename to Submate (for logging)",
+        defaultValue: false,
+      },
+      {
+        type: "testbutton",
+        key: "submate",
+        name: "Test Connection button",
+      },
+    ],
+  },
   { key: "wizdom", description: "Wizdom.xyz Subtitles Provider" },
   {
     key: "xsubs",

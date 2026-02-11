@@ -335,6 +335,14 @@ validators = [
     Validator('whisperai.loglevel', must_exist=True, default='INFO', is_type_of=str,
               is_in=['DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL']),
 
+    # submate section (multi-language transcription/translation with LLM)
+    Validator('submate.endpoint', must_exist=True, default='http://127.0.0.1:9000', is_type_of=str),
+    Validator('submate.response', must_exist=True, default=5, is_type_of=int, gte=1),
+    Validator('submate.timeout', must_exist=True, default=3600, is_type_of=int, gte=1),
+    Validator('submate.pass_video_name', must_exist=True, default=False, is_type_of=bool),
+    Validator('submate.loglevel', must_exist=True, default='INFO', is_type_of=str,
+              is_in=['DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL']),
+
     # legendasdivx section
     Validator('legendasdivx.username', must_exist=True, default='', is_type_of=str, cast=str),
     Validator('legendasdivx.password', must_exist=True, default='', is_type_of=str, cast=str),
